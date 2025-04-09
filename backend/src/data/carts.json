@@ -1,0 +1,38 @@
+{
+  "carts": [
+    {
+      "userId": 1,
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 11
+        },
+        {
+          "productId": 2,
+          "quantity": 2
+        },
+        {
+          "productId": 5,
+          "quantity": 1
+        }
+      ],
+      "createdAt": 1744152931855,
+      "updatedAt": 1744157689673
+    },
+    {
+      "userId": 2,
+      "items": [
+        {
+          "productId": 5,
+          "quantity": 1
+        },
+        {
+          "productId": 6,
+          "quantity": 1
+        }
+      ],
+      "createdAt": 1744197601246,
+      "updatedAt": 1744203517334
+    }
+  ]
+}

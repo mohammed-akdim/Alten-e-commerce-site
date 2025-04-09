@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "firstname": "Admin",
+      "email": "admin@admin.com",
+      "password": "$2a$10$Emau0T60UHYZ8SVPJ.RNpuojirwmh4GNkanJDJEWQR5yRtgxiM0WK",
+      "role": "admin",
+      "createdAt": 1744146634235,
+      "updatedAt": 1744146634235
+    },
+    {
+      "username": "AKDIM",
+      "firstname": "Mohammed",
+      "email": "mohammed.akdim@gmail.com",
+      "password": "$2a$10$dyMq4CuEoe8E6c1eFmwBpOp5bbwzQjnFcqsLIIc1bi0VWpLPfP73m",
+      "id": 2,
+      "createdAt": 1744195199139,
+      "updatedAt": 1744195199139
+    }
+  ]
+}

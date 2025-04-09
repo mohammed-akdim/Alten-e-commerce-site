@@ -1,0 +1,14 @@
+{
+  "wishlists": [
+    {
+      "userId": 2,
+      "productIds": [
+        9,
+        6,
+        5
+      ],
+      "createdAt": 1744203028014,
+      "updatedAt": 1744203075404
+    }
+  ]
+}
