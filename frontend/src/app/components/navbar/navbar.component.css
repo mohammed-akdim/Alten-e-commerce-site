@@ -1,0 +1,80 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #3f51b5; /* Couleur primaire de Material */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajouter une ombre légère */
+}
+.app-title {
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-links button,
+mat-toolbar button:not(.mat-icon-button) { /* Apply to nav links and auth text buttons */
+  min-width: auto;
+  color: white;
+}
+
+.active-link {
+  font-weight: bold;
+  border-bottom: 2px solid white; /* Or use accent color */
+  border-radius: 0; /* Remove button default radius for underline effect */
+}
+
+/* Adjust icon button margins if needed */
+mat-toolbar .mat-icon-button {
+  margin-left: 8px;
+  color: white;
+}
+
+/* Style for the user menu */
+.user-menu {
+  display: flex;
+  align-items: center;
+}
+
+/* Style pour le menu déroulant */
+::ng-deep .mat-mdc-menu-panel {
+  z-index: 1001 !important; /* Plus élevé que la barre de navigation */
+}
+
+::ng-deep .mat-mdc-menu-content {
+  background-color: white;
+}
+
+::ng-deep .mat-mdc-menu-item {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/* Add margin to the main content to account for fixed navbar */
+:host {
+  display: block;
+  margin-top: 64px; /* Height of the toolbar */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links on small screens, rely on menu button */
+  }
+
+  :host {
+    margin-top: 56px; /* Smaller toolbar height on mobile */
+  }
+}

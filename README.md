@@ -6,7 +6,7 @@ This is a full-stack e-commerce application built with Angular (frontend) and No
 
 - Node.js (v18 or higher)
 - npm (v9 or higher)
-- Angular CLI (v17 or higher)
+- Angular CLI (v18 or higher)
 
 ## Project Structure
 
@@ -88,8 +88,8 @@ The frontend application will be running at http://localhost:4200
 ## API Endpoints
 
 ### Authentication
-- POST /api/auth/register - Register a new user
-- POST /api/auth/login - Login user
+- POST /api/auth/account - Register a new user
+- POST /api/auth/token - Login user
 - GET /api/auth/me - Get current user profile
 
 ### Products

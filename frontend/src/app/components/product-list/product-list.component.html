@@ -1,0 +1,44 @@
+<div class="products-container">
+  <div class="search-container">
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Rechercher un produit</mat-label>
+      <input matInput [(ngModel)]="searchQuery" (keyup)="onSearch()" placeholder="Nom du produit...">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div class="product-grid">
+    <mat-card *ngFor="let product of products" class="product-card">
+      <img mat-card-image [src]="product.image" [alt]="product.name" class="product-image">
+      <mat-card-header>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="product-description">
+          {{ product.description | slice:0:100 }}{{ product.description.length > 100 ? '...' : '' }}
+        </p>
+        <p class="product-price">{{ product.price | currency:'EUR' }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" [routerLink]="['/products', product.id]">
+          Voir détails
+        </button>
+        <div class="icon-buttons">
+          <button mat-icon-button color="primary" (click)="addToCart(product)" matTooltip="Ajouter au panier">
+            <mat-icon>add_shopping_cart</mat-icon>
+          </button>
+          <button mat-icon-button [color]="isInWishlist(product.id) ? 'warn' : 'primary'" 
+                  (click)="toggleWishlist(product)"
+                  matTooltip="{{ isInWishlist(product.id) ? 'Retirer des favoris' : 'Ajouter aux favoris' }}">
+            <mat-icon>{{ isInWishlist(product.id) ? 'favorite' : 'favorite_border' }}</mat-icon>
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div *ngIf="!products || products.length === 0" class="no-products">
+    <p>Aucun produit trouvé.</p>
+  </div>
+</div> 

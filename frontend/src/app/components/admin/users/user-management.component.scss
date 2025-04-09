@@ -1,0 +1,48 @@
+.user-management-container {
+  padding: 20px;
+}
+
+.table-container {
+  position: relative;
+  min-height: 200px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 300px;
+}
+
+table {
+  width: 100%;
+}
+
+.role-admin {
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.role-user {
+  color: #666;
+}
+
+.mat-column-actions {
+  width: 120px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .table-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+} 

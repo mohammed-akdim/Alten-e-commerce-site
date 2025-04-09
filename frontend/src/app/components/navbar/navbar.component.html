@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button aria-label="Toggle menu">
+    <mat-icon>menu</mat-icon> <!-- Assuming a menu toggle for potential sidenav -->
+  </button>
+  <span class="app-title" routerLink="/">Mon Magasin</span>
+
+  <span class="spacer"></span>
+
+  <!-- Navigation Links -->
+  <div class="nav-links">
+    <button mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Accueil</button>
+    <button mat-button routerLink="/products" routerLinkActive="active-link">Produits</button>
+    <button mat-button routerLink="/contact" routerLinkActive="active-link">Contact</button> <!-- Added Contact -->
+  </div>
+
+  <!-- Existing Wishlist/Cart/Auth buttons -->
+  <button mat-icon-button routerLink="/wishlist" aria-label="Wishlist" matTooltip="Liste de souhaits">
+      <mat-icon>favorite</mat-icon>
+  </button>
+  <button class="badge-shopping-cart" [matBadge]="cartItemCount" mat-icon-button routerLink="/cart" aria-label="Shopping cart" matTooltip="Panier">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+
+  <!-- Auth Buttons/Menu -->
+  <ng-container *ngIf="!isLoggedIn">
+    <button mat-button routerLink="/login">Connexion</button>
+    <button mat-button routerLink="/register">Inscription</button>
+  </ng-container>
+  <ng-container *ngIf="isLoggedIn">
+     <button mat-icon-button [matMenuTriggerFor]="userMenu" aria-label="User menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item routerLink="/profile">Profil</button>
+        <button mat-menu-item routerLink="/orders">Mes Commandes</button>
+        <ng-container *ngIf="authService.isAdmin()">
+          <button mat-menu-item routerLink="/admin">Administration</button>
+        </ng-container>
+        <button mat-menu-item (click)="authService.logout()">Déconnexion</button>
+      </mat-menu>
+  </ng-container>
+
+</mat-toolbar> 

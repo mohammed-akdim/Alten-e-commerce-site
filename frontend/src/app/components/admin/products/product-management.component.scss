@@ -1,0 +1,51 @@
+.product-management-container {
+  padding: 20px;
+}
+
+.table-container {
+  position: relative;
+  min-height: 200px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 300px;
+}
+
+table {
+  width: 100%;
+}
+
+.stock-high {
+  color: #388e3c;
+}
+
+.stock-medium {
+  color: #f57c00;
+}
+
+.stock-low {
+  color: #d32f2f;
+}
+
+.mat-column-actions {
+  width: 120px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .table-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+} 

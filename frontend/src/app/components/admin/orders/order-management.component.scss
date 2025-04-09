@@ -1,0 +1,65 @@
+.order-management-container {
+  padding: 20px;
+}
+
+.table-container {
+  position: relative;
+  min-height: 200px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+mat-form-field {
+  width: 300px;
+}
+
+table {
+  width: 100%;
+}
+
+.status-pending {
+  color: #f57c00;
+}
+
+.status-processing {
+  color: #1976d2;
+}
+
+.status-completed {
+  color: #388e3c;
+}
+
+.status-cancelled {
+  color: #d32f2f;
+}
+
+.mat-column-actions {
+  width: 120px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .table-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+} 
