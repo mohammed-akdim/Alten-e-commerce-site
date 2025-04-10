@@ -18,7 +18,7 @@ export class UserService {
   }
 
   // Fetch a single user by ID
-  getUser(id: number): Observable<User> {
+  getUser(id: string): Observable<User> {
     return this.http.get<User>(`${this.apiUrl}/${id}`);
   }
 
@@ -28,12 +28,12 @@ export class UserService {
   }
 
   // Update an existing user (requires admin privileges)
-  updateUser(id: number, user: Partial<User>): Observable<User> {
+  updateUser(id: string, user: Partial<User>): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${id}`, user);
   }
 
   // Delete a user (requires admin privileges)
-  deleteUser(id: number): Observable<void> {
+  deleteUser(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 } 

@@ -28,11 +28,11 @@
         },
         {
           "productId": 6,
-          "quantity": 1
+          "quantity": 2
         }
       ],
       "createdAt": 1744197601246,
-      "updatedAt": 1744203517334
+      "updatedAt": 1744207279348
     }
   ]
 }

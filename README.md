@@ -1,14 +1,109 @@
 # Alten E-commerce Application
 
-This is a full-stack e-commerce application built with Angular (frontend) and Node.js (backend).
+Application e-commerce complète construite avec Angular et Node.js, offrant une expérience utilisateur moderne et responsive.
 
-## Prerequisites
+## 🚀 Fonctionnalités
 
-- Node.js (v18 or higher)
-- npm (v9 or higher)
-- Angular CLI (v18 or higher)
+### 👥 Gestion des Utilisateurs
+- Inscription et connexion sécurisées
+- Authentification JWT
+- Gestion des rôles (utilisateur/administrateur)
+- Profil utilisateur personnalisable
 
-## Project Structure
+### 🛍️ Catalogue Produits
+- Liste des produits avec pagination
+- Recherche et filtrage avancés
+- Vue détaillée des produits
+- Gestion des catégories
+- Images et descriptions riches
+
+### 🛒 Gestion du Panier
+- Ajout/suppression de produits
+- Mise à jour des quantités en temps réel
+- Persistance du panier
+- Calcul automatique du total
+- Indicateur de quantité dans la navbar
+
+### ❤️ Liste de Souhaits
+- Ajout/suppression des favoris
+- Synchronisation avec le compte utilisateur
+- Interface intuitive
+- Indicateurs visuels (cœur plein/vide)
+
+### 👑 Panel Administrateur
+- Gestion complète des produits (CRUD)
+- Gestion des utilisateurs
+- Suivi des commandes
+- Tableau de bord avec statistiques
+
+## 🛠️ Technologies Utilisées
+
+### Frontend
+- Angular 18+
+- Angular Material
+- RxJS
+- TypeScript
+- SCSS
+
+### Backend
+- Node.js
+- Express.js
+- TypeScript
+- JWT pour l'authentification
+- Stockage JSON
+
+## 📋 Prérequis
+
+- Node.js (v18 ou supérieur)
+- npm (v9 ou supérieur)
+- Angular CLI (v17 ou supérieur)
+
+## 🚀 Installation
+
+### Backend
+
+1. Accéder au dossier backend :
+```bash
+cd backend
+```
+
+2. Installer les dépendances :
+```bash
+npm install
+```
+
+3. Compiler le code TypeScript :
+```bash
+npm run build
+```
+
+4. Démarrer le serveur de développement :
+```bash
+npm run dev
+```
+
+Le serveur backend sera accessible sur http://localhost:3000
+
+### Frontend
+
+1. Accéder au dossier frontend :
+```bash
+cd frontend
+```
+
+2. Installer les dépendances :
+```bash
+npm install
+```
+
+3. Démarrer le serveur de développement :
+```bash
+ng serve
+```
+
+L'application sera accessible sur http://localhost:4200
+
+## 📚 Structure du Projet
 
 ```
 alten-ecommerce/
@@ -16,110 +111,15 @@ alten-ecommerce/
 └── frontend/        # Angular frontend application
 ```
 
-## Getting Started
+## 🔑 Configuration
 
-### Backend Setup
-
-1. Navigate to the backend directory:
-```bash
-cd backend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Build the TypeScript code:
-```bash
-npm run build
-```
-
-4. Start the development server:
-```bash
-npm run dev
-```
-
-The backend server will be running at http://localhost:3000
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-```bash
-cd frontend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-ng serve
-```
-
-The frontend application will be running at http://localhost:4200
-
-## Available Scripts
-
-### Backend Scripts
-
-- `npm run build` - Compiles TypeScript to JavaScript
-- `npm run dev` - Starts the development server with hot-reload
-- `npm start` - Starts the production server
-
-### Frontend Scripts
-
-- `ng serve` - Starts the development server
-- `ng build` - Builds the application for production
-- `ng test` - Runs unit tests
-- `ng e2e` - Runs end-to-end tests
-
-## Features
-
-- User authentication (login/register)
-- Product listing and details
-- Shopping cart management
-- Wishlist functionality
-- Contact form
-- Responsive design
-
-## API Endpoints
-
-### Authentication
-- POST /api/auth/account - Register a new user
-- POST /api/auth/token - Login user
-- GET /api/auth/me - Get current user profile
-
-### Products
-- GET /api/products - Get all products
-- GET /api/products/:id - Get product by ID
-- POST /api/products - Create new product (admin only)
-- PUT /api/products/:id - Update product (admin only)
-- DELETE /api/products/:id - Delete product (admin only)
-
-### Cart
-- GET /api/cart - Get user's cart
-- POST /api/cart - Add item to cart
-- PUT /api/cart/:id - Update cart item
-- DELETE /api/cart/:id - Remove item from cart
-
-### Wishlist
-- GET /api/wishlist - Get user's wishlist
-- POST /api/wishlist - Add item to wishlist
-- DELETE /api/wishlist/:id - Remove item from wishlist
-
-## Environment Variables
-
-### Backend (.env)
+### Variables d'Environnement Backend (.env)
 ```
 PORT=3000
-MONGODB_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
 ```
 
-### Frontend (environment.ts)
+### Configuration Frontend (environment.ts)
 ```typescript
 export const environment = {
   production: false,
@@ -127,14 +127,54 @@ export const environment = {
 };
 ```
 
-## Contributing
+## 📡 API Endpoints
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### Authentification
+- POST /auth/account - Inscription
+- POST /auth/token - Connexion
 
-## License
+### Produits
+- GET /products - Liste des produits
+- GET /products/:id - Détail d'un produit
+- POST /products - Créer un produit (admin)
+- PUT /products/:id - Modifier un produit (admin)
+- DELETE /products/:id - Supprimer un produit (admin)
 
-This project is licensed under the ISC License. 
+### Panier
+- GET /carts - Obtenir le panier
+- POST /carts/add - Ajouter au panier
+- PUT /carts/:id - Modifier la quantité
+- DELETE /carts/:id - Supprimer du panier
+
+### Favoris
+- GET /wishlists - Liste des favoris
+- POST /wishlists/add - Ajouter aux favoris
+- DELETE /wishlists/:id - Retirer des favoris
+
+## 🔒 Sécurité
+
+- Authentification JWT
+- Protection CORS
+- Validation des données
+- Hachage des mots de passe
+- Protection des routes sensibles
+
+## 🤝 Contribution
+
+1. Forkez le projet
+2. Créez votre branche (`git checkout -b feature/nouvelle-fonctionnalite`)
+3. Committez vos changements (`git commit -m 'Ajout d'une nouvelle fonctionnalité'`)
+4. Poussez vers la branche (`git push origin feature/nouvelle-fonctionnalite`)
+5. Ouvrez une Pull Request
+
+## 📝 Licence
+
+Ce projet est sous licence ISC.
+
+## 👥 Auteurs
+
+- Équipe Alten
+
+## 📞 Support
+
+Pour toute question ou problème, veuillez ouvrir une issue sur le dépôt GitHub. 

@@ -116,12 +116,7 @@ export class UserManagementComponent implements OnInit {
   }
 
   openEditUserDialog(user: User) {
-    this.userForm.patchValue({
-      username: user.username,
-      firstname: user.firstname,
-      email: user.email,
-      role: user.role || 'user'
-    });
+    this.userForm.patchValue(user);
     const dialogRef = this.dialog.open(UserDialogComponent, {
       width: '500px',
       data: { form: this.userForm, isEdit: true, user }
@@ -129,7 +124,7 @@ export class UserManagementComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userService.updateUser(Number(user.id), result).subscribe({
+        this.userService.updateUser(user.id, result).subscribe({
           next: () => {
             this.snackBar.open('Utilisateur mis à jour avec succès', 'Fermer', { duration: 3000 });
             this.loadUsers();
@@ -144,7 +139,7 @@ export class UserManagementComponent implements OnInit {
 
   deleteUser(user: User) {
     if (confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')) {
-      this.userService.deleteUser(Number(user.id)).subscribe({
+      this.userService.deleteUser(user.id).subscribe({
         next: () => {
           this.snackBar.open('Utilisateur supprimé avec succès', 'Fermer', { duration: 3000 });
           this.loadUsers();
