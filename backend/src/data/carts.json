@@ -24,7 +24,7 @@
       "items": [
         {
           "productId": 5,
-          "quantity": 1
+          "quantity": 2
         },
         {
           "productId": 6,
@@ -32,7 +32,7 @@
         }
       ],
       "createdAt": 1744197601246,
-      "updatedAt": 1744207279348
+      "updatedAt": 1744294173894
     }
   ]
 }

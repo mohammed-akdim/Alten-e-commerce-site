@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Angular Material theme */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Global styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Material card hover effect */
+.mat-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.mat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form field styles */
+.mat-form-field {
+  width: 100%;
+}
+
+/* Button styles */
+.mat-button, .mat-raised-button {
+  margin: 8px;
+}
+
+/* Snackbar styles */
+.mat-snack-bar-container {
+  margin: 8px;
+}
+
+/* Dialog styles */
+.mat-dialog-container {
+  padding: 24px;
+}
+
+/* Table styles */
+.mat-table {
+  width: 100%;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}

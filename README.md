@@ -106,7 +106,7 @@ L'application sera accessible sur http://localhost:4200
 ## 📚 Structure du Projet
 
 ```
-alten-ecommerce/
+Alten-e-commerce-site/
 ├── backend/         # Node.js backend application
 └── frontend/        # Angular frontend application
 ```
